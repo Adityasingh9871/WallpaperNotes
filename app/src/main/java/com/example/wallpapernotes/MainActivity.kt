@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.Column
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -150,7 +151,8 @@ fun defaultPreview()
         Log.d("delete ", "deleted")
     }
 
-    DialogBox(onAddNote , OnClose = {isAddDialog=true}, context = LocalContext.current)
+//    DialogBox(onAddNote , OnClose = {isAddDialog=true}, context = LocalContext.current)
+    NotesPerRow("a","a","a","date",onDelete)
 
 }
 
@@ -231,7 +233,7 @@ fun NotesPerRow(
                 IconButton(onClick = { onDelete(id) },modifier= Modifier
                     .weight(.3f)
                     .align(CenterVertically)) {
-                    Icon(imageVector = Icons.Default.Delete, contentDescription = "",tint = Color.Red)
+                    Icon(imageVector = Icons.Default.Delete, contentDescription = "",tint = Color.Red.copy(alpha = .5f))
                 }
             }
             
